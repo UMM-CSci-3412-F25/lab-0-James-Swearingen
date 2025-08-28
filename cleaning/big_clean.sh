@@ -10,7 +10,7 @@ tar -xf "$1" -C "$scratch"
 cd "$scratch"
 #by the power of grep (find every file that has the line "DELETE ME!" in it)
 #then pipes the output into xargs so they get deleted
-grep -l "DELETE ME!" | xargs -0 /bin/rm -f 
+grep -lr "DELETE ME!" | xargs -0 rm -f 
 
 
 
