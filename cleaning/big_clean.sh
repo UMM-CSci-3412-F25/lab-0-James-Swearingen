@@ -10,7 +10,7 @@ mkdir "$scratch/$filename"
 #extract to the temp directory
 tar -xf "$1" -C "$scratch/$filename"
 #go into the scratch directory so we don't start scrubbing the entire system or something
-cd "$scratch"
+cd "$scratch/$filename"
 #by the power of grep (find every file that has the line "DELETE ME!" in it)
 #then pipes the output into xargs so they get deleted
 grep -lr "DELETE ME!" | xargs -0 rm -f 
