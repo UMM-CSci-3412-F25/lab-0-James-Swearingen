@@ -13,7 +13,7 @@ tar -xf "$1" -C "$scratch/$filename"
 cd "$scratch/$filename"
 #by the power of grep (find every file that has the line "DELETE ME!" in it)
 #then pipes the output into xargs so they get deleted
-grep -lr "DELETE ME!" | xargs -0 rm -f 
+grep -lrF "DELETE ME!" | xargs -0d '\n' rm 
 #create new tgz with the proper filename
 #creates the tgz with the name cleaned_<insert name of original file>
 #compressing all files from the directory that it is currently in 
